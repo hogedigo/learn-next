@@ -3,7 +3,17 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbopack",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint-staged": "lint-staged",
+    "hooks:install": "simple-git-hooks",
     "start": "next start"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm -C apps/next-dashboard lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,jsonc,css,md,mdx,yml,yaml}": "prettier --check"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -26,7 +36,10 @@
     "@types/bcrypt": "^5.0.2",
     "@types/node": "22.10.7",
     "@types/react": "19.0.7",
-    "@types/react-dom": "19.0.3"
+    "@types/react-dom": "19.0.3",
+    "lint-staged": "^16.2.7",
+    "prettier": "3.8.1",
+    "simple-git-hooks": "^2.13.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
