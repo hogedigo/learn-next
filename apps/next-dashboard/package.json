@@ -7,7 +7,8 @@
     "format:check": "prettier --check .",
     "lint-staged": "lint-staged",
     "hooks:install": "simple-git-hooks",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint ."
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm -C apps/next-dashboard lint-staged"
@@ -37,6 +38,8 @@
     "@types/node": "22.10.7",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
+    "eslint": "^10.0.0",
+    "eslint-config-next": "^16.1.6",
     "lint-staged": "^16.2.7",
     "prettier": "3.8.1",
     "simple-git-hooks": "^2.13.1"
